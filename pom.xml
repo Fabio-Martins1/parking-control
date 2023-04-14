@@ -11,7 +11,7 @@
 	<artifactId>parking-control</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>parking-control</name>
-	<description>Meu primeiro contato com spring boot</description>
+	<description>Projeto Spring boot com Spring Security e Spring Validation </description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
