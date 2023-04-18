@@ -9,11 +9,12 @@ export const fieldsLogin: IFields[] = [
     size: "large",
     placeholder: "Entre com o seu usuário",
     colSpan: 24,
-    wrapperSpan: 50,
+    wrapperSpan: 0,
     wrapperOffset: 0,
     hasFeedback: true,
     prefix: <><UserOutlined/></>,
-    rules: [{required: true, type: "email", message: "Entre com o seu usuário!"}]
+    rules: [{required: true, type: "email", message: "Entre com o seu usuário!"}],
+    url: ""
   },
   {
     type: "password",
@@ -25,7 +26,8 @@ export const fieldsLogin: IFields[] = [
     wrapperSpan: 0,
     wrapperOffset: 0,
     prefix: <><LockOutlined/></>,
-    rules: [{required: true, message: "Entre com a sua senha!", min: 8}]
+    rules: [{required: true, message: "Entre com a sua senha!", min: 8}],
+    url: ""
   },
   {
     type: "checkbox",
@@ -37,16 +39,17 @@ export const fieldsLogin: IFields[] = [
     colSpan: 12,
     wrapperSpan: 0,
     wrapperOffset: 0,
+    url: ""
   },
   {
     type: "link",
-    href: "/forgetPassword",
     name: "forgetPassword",
     label: "",
     placeholder: "Esqueci minha senha",
     colSpan: 12,
     wrapperSpan: 0,
     wrapperOffset: 0,
+    url: "/forgetPassword"
   },
 
 ]

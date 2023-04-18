@@ -1,10 +1,10 @@
-.forget_password_container {
+.container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.forget_password_form_container {
+.home_container{
   width: 30%;
   margin-top: 5%;
   padding: 3em;

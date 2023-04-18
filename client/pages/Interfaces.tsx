@@ -1,6 +1,8 @@
 import {Rule} from "antd/es/form"
 import {SizeType} from "antd/es/config-provider/SizeContext";
 import {ReactNode} from "react";
+import {Path} from "react-router-dom";
+
 export interface IFields {
   type: string,
   name: string,
@@ -14,6 +16,6 @@ export interface IFields {
   format?: string,
   valuePropName?: string,
   prefix?: ReactNode,
-  rules?: Array<Rule>,
-  href?: string
+  rules?: Array<Rule>
+  url: string | Partial<Path>
 }

@@ -1,22 +1,22 @@
 import React from "react";
 
-import styles from "./login.module.css"
+import styles from "./Login.module.css"
 
+import {useNavigate} from "react-router-dom";
 import {Button, Form, notification,} from "antd";
 import {LoginOutlined, UserAddOutlined} from "@ant-design/icons";
 import {FieldGenerator} from "../FieldGenerator";
-import {fieldsLogin} from "./fieldsLogin";
-import {useRouter} from "next/router";
+import {fieldsLogin} from "./FieldsLogin";
 
-export default function Login() {
+export const Login = () => {
 
-  const router = useRouter();
+  const navigate = useNavigate()
 
   const onFinish = (): void => {
     notification.success({
       message: "Bem-vindo!"
     });
-    router.push("/")
+    navigate("/")
   }
   const onFinishFailed = (): void => {
     notification.error({
@@ -34,7 +34,7 @@ export default function Login() {
               initialValues={{remember: true}}
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
-              autoComplete={"on"}
+              autoComplete={"current-password"}
           >
             <FieldGenerator fieldsList={fieldsLogin}/>
             <Form.Item wrapperCol={{offset: 2, span: 20}}>

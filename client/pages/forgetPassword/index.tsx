@@ -1,9 +1,11 @@
-import styles from "./forgetPassword.module.css"
+import React from "react";
 
-export default function forgetPassword() {
-  return <div className={styles.forget_password_container}>
-    <h1>
-      Em construção
-    </h1>
-  </div>
+export const ForgetPassword = () => {
+  return (
+      <div>
+        <div>
+          <h1>Em construção</h1>
+        </div>
+      </div>
+  )
 }

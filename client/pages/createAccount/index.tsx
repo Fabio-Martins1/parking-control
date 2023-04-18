@@ -1,39 +1,31 @@
-import React, {useState} from "react"
-
-import styles from "./CreateAccount.module.css"
-
+import styles from "./createAccount.module.css"
 import {Button, Col, Form, notification, Row} from "antd";
+import {useNavigate} from "react-router-dom";
 import {FieldGenerator} from "../FieldGenerator";
-import {ArrowLeftOutlined, ArrowRightOutlined} from "@ant-design/icons";
-import {createAccountFields} from "@/pages/createAccount/createAccountFields";
-import {useRouter} from "next/router";
+import {CreateAccountFields} from "./CreateAccountFields";
+import React, {useState} from "react";
+import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 
-export default function CreateAccount(){
+export const CreateAccount = () => {
+
   const [page, setPage] = useState<number>(0)
-  const router = useRouter();
+  const navigate = useNavigate()
 
-  const onFinish = (): void => {
-    if (page === 0) {
-      setPage(1);
-    }
-    if (page === 1) {
-      setPage(2);
-    }
-    if (page === 2) {
+  const onFinishFailed = () => {
+    notification.error({
+      message: "Algo deu errado!",
+      description: "Preencha os campos corretamente!"
+    });
+  };
+  const onFinish = () => {
       notification.success({
         message: "Tudo certo!"
       });
-      router.push("/");
-    }
-  };
-  const onFinishFailed = (): void => {
-    notification.error({
-      message: "Preencha os campos corretamente"
-    });
+      navigate("/login");
   };
   const prev = (): void => {
     if (page === 0) {
-      router.push("/login");
+      navigate("/login");
     }
     if (page === 1) {
       setPage(0);
@@ -42,18 +34,18 @@ export default function CreateAccount(){
       setPage(1);
     }
   };
-  return (
+  return(
       <div className={styles.create_account_container}>
         <div className={styles.create_account_form_container}>
           <Form
-              name={"createAccountForm"}
+              name={"createAcountForm"}
               layout={"vertical"}
               initialValues={{remember: true}}
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
-              autoComplete={"on"}
+              autoComplete={"off"}
           >
-            <FieldGenerator fieldsList={createAccountFields} />
+            <FieldGenerator fieldsList={CreateAccountFields} />
             <Row gutter={24}>
               <Col span={10}>
                 <Form.Item wrapperCol={{offset: 0, span: 15}}>
