@@ -1,0 +1,17 @@
+* {
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  background-color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+}
+button{
+  color: #FFA119;
+}
